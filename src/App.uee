@@ -1,0 +1,53 @@
+
+<template>
+  <div>
+    <h1>{{title}}</h1>
+    <Child @changeTitle="updateTitleText($event)"></Child>
+    <hr>
+    =============================================
+    <h1>Get Form Data</h1>
+       <Login></Login>
+    ======================================
+    <h1>Subbmit Errors</h1>
+    <FormSubmit></FormSubmit>
+    <hr>
+    =====================Post postRequest====================================
+    <PostRequest></PostRequest>
+   <br><br><br>
+   <hr>
+   ==============Delete Request======================
+   <DeleteRequest></DeleteRequest>
+   <hr>
+   <br><br><br>
+  </div>
+</template>
+<script>
+import Child from "./Child.vue";
+import Login from "./components/Login.vue";
+import FormSubmit from "./components/FormSubmit.vue";
+import PostRequest from "./components/PostRequest.vue";
+import DeleteRequest from "./components/DeleteRequest.vue";
+export default{
+    data() {
+        return {
+            title: "This is the title"
+        };
+    },
+    components: { Child, Login, FormSubmit, PostRequest, DeleteRequest },
+    methods:{
+      updateTitleText(tit){
+        this.title=tit
+      }
+    }
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+</style>
